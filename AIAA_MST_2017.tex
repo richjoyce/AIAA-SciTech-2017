@@ -56,7 +56,7 @@
  \usepackage{dcolumn}%   decimal-aligned tabular math columns
   \newcolumntype{d}{D{.}{.}{-1}}
  \usepackage{nomencl}%   nomenclature generation via makeindex
-  \makeglossary
+  \makeglossary%
  % \usepackage{subfigure}% subcaptions for subfigures
  % \usepackage{subfigmat}% matrices of similar subfigures, aka small mulitples
  \usepackage{subcaption}
@@ -108,7 +108,7 @@ To address these issues, we have designed and prototyped a system to allow peval
 The aim of our system is to give a non-functioning geometric mockup the interactivity of a simulator.
 The mockup, which is used in the early stage of the design process, can now be used for more extensive cockpit evaluations, with a quicker iteration time than a simulator requires.
 Our prototype, named the ``Rapidly Reconfigurable Research Cockpit'', consists of a virtual reality (VR) headset, optical hand tracking device, and 3D printed cockpit surfaces (Figure~\ref{fig:r3c}).
-It was previously described in detail in Ref. 1.
+It was previously described in detail in Ref.~\cite{joyce_rapidly_2015}.
 \begin{figure}[tb]
   \centering
   \begin{subfigure}{.49\textwidth}
@@ -124,6 +124,7 @@ It was previously described in detail in Ref. 1.
     \label{fig:r3c_sub2}
   \end{subfigure}
   \caption{Rapidly Reconfigurable Research Cockpit}
+  \label{fig:r3c}
 \end{figure}
 
 The VR head-mounted display (HMD) provides a virtual view of the cockpit environment.
@@ -136,9 +137,9 @@ Measurements from the hand to display the essential visual feedback of hand posi
 
 \section{Background}
 \subsection{Fitts' Law}
-One of the most well studied relationships for human-computer input is Fitts Law\cite{fitts}.
+One of the most well studied relationships for human-computer input is Fitts Law\cite{fitts_information_1954}.
 Fitts' Law states that the movement time of human targeting motion is related to the size of the target (W) and the distance to the target (D).
-These two geometrical parameters are combined in the index of difficulty (ID), which is presented here in the popular Shannons Formulation\cite{shannons}:
+These two geometrical parameters are combined in the index of difficulty (ID), which is presented here in the popular Shannons Formulation\cite{mackenzie_note_1989}:
 \begin{equation}
   ID=\log_2\left(\frac{D}{W}+1\right)
 \end{equation}
@@ -146,13 +147,13 @@ The index of difficulty is linearly proportional to the movement time (MT), whic
 \begin{equation}
   MT=a+b \cdot ID
 \end{equation}
-When comparing experimental conditions, it is recommended to use the measure of throughput (TP)\cite{four}.
+When comparing experimental conditions, it is recommended to use the measure of throughput (TP)\cite{soukoreff_towards_2004}.
 This provides a single measure that encompasses speed and accuracy, averaging over the range of indices of difficulty.
 Throughput has the units of bits per second, analogous to the amount of information, and is defined as the index of difficulty over the movement time:
 \begin{equation}
   TP=\frac{ID}{MT}
 \end{equation}
-In studies of Fitts Law in which subjects are performing the task in two dimensions the ISO9421-9 circle multidirectional tapping task has become the standard\cite{five}.
+In studies of Fitts Law in which subjects are performing the task in two dimensions the ISO9421-9 circle multidirectional tapping task has become the standard\cite{international_organization_for_standardization_iso_2000}.
 A diagram of the task is shown in Figure~\ref{fig:circle}.
 
 \begin{figure}[htb]
@@ -163,13 +164,13 @@ A diagram of the task is shown in Figure~\ref{fig:circle}.
 \end{figure}
 
 Fitts Law has been used in evaluating virtual environments and their input devices.
-Chun et al.\cite{chun} evaluated a set of 3D stereo displays with a single haptic-enabled stylus using a Fitts tapping task.
-Teather \& Stuerzlinger\cite{teather} performed a fully 3D targeting task using a hand tracker.
-Liu et al.\cite{liu} performed a planar multi-directional Fitts task with a stereoscopic display, and compared virtual world to real world results, finding movement time twice as long in the virtual condition.
-Kohli et al.\cite{kohli} evaluated passive haptics with warped virtual space to fool the user of the nature of the physical world.
+Chun et al.\cite{chun_evaluating_2004} evaluated a set of 3D stereo displays with a single haptic-enabled stylus using a Fitts tapping task.
+Teather \& Stuerzlinger\cite{teather_pointing_2011} performed a fully 3D targeting task using a hand tracker.
+Liu et al.\cite{liu_comparing_2009} performed a planar multi-directional Fitts task with a stereoscopic display, and compared virtual world to real world results, finding movement time twice as long in the virtual condition.
+Kohli et al.\cite{kohli_redirected_2012} evaluated passive haptics with warped virtual space to fool the user of the nature of the physical world.
 They had the subjects perform an ISO9241-9 Fitts circle on a panel placed in front of them, and in some conditions the panel was rotated in the virtual world but not in the real world to create the discrepancy.
 The subjects hand movement was warped to compensate for this.
-Seixas et al.\cite{seixas} performed an ISO 9241-9 Fitts circle task with the same LeapMotion hand tracker we use, but did not employ any haptic feedback.
+Seixas et al.\cite{seixas_one_2015} performed an ISO 9241-9 Fitts circle task with the same LeapMotion hand tracker we use, but did not employ any haptic feedback.
 
 \subsection{Passive Haptics}
 A constant challenge of virtual environments has been presenting the user with a tactile sensory input that matches the visual sensory inputs they are experiencing.
@@ -178,14 +179,14 @@ The disadvantage is that the tactile environment cannot dynamically change durin
 Fortunately, the adaptability (during simulation) of the passive haptic environment is not a requirement for the use case of aerospace cockpit simulation.
 We still retain the ability to quickly change the environment via 3D printing new parts in between simulation sessions.
 
-Schiefele et al.\cite{shiefele} used a head-mounted display (HMD) to replace the visuals of a flight simulator (though technology has drastically changed in HMDs and hand tracking since their publication).
+Schiefele et al.\cite{schiefele_simple_1998} used a head-mounted display (HMD) to replace the visuals of a flight simulator (though technology has drastically changed in HMDs and hand tracking since their publication).
 They recreated only the positions of the panels with a flat plate and then used a magnetic hand tracker for reading the pilot input.
 A short usability study was presented, and they found that users could activate switches, knobs and dials in less time with the physical panel than without (i.e.\ reaching into mid-air), a result reproduced here.
-Insko\cite{insko} investigated the impact of passive haptics on generic virtual environments.
+Insko\cite{insko_passive_2001} investigated the impact of passive haptics on generic virtual environments.
 It was found that the passive haptics increased the sense of presence felt by users.
 An experiment had two groups complete a maze in a virtual environment, one group with passive haptics on boundaries, and one without.
 After training the passive haptic group bumped into far fewer obstacles than the group without.
-Borst and Volz\cite{borst} created a ``mixed'' haptic virtual environment, whereby they combined an active haptic glove with a passive haptic panel.
+Borst and Volz\cite{borst_evaluation_2005} created a ``mixed'' haptic virtual environment, whereby they combined an active haptic glove with a passive haptic panel.
 They found the glove by itself consistently performed worse than the other two, but overall no significant difference existed between passive haptics and their mixed haptics, again indicating the power of simple passive haptics.
 
 \section{Methods}
@@ -199,8 +200,8 @@ The button selection is registered by the subject moving their index finger into
 Their entrance into the hover zone is indicated to them by the button changing color.
 A successful button press is registered after 160ms, and is indicated by the color turning off and a button click noise being played over speakers.
 
-The authors previous study\cite{r3c} asked subjects to complete a discrete button targeting task, and validated our technical approach.
-Subjects were able to select the buttons in the virtual world as accurately as in the real world, albeit with a small time penalty, consistent with other studies comparing real world to virtual world inputs\cite{eight}.
+The authors previous study\cite{joyce_rapidly_2015} asked subjects to complete a discrete button targeting task, and validated our technical approach.
+Subjects were able to select the buttons in the virtual world as accurately as in the real world, albeit with a small time penalty, consistent with other studies comparing real world to virtual world inputs\cite{liu_comparing_2009}.
 However, the difference between the passive haptic and no passive haptic condition was insignificant, leading to a more extensive Fitts evaluation that is presented in this paper.
 The experimental setup for this study consisted of two conditions, one with the panel (``Passive Haptics'') and one without the panel (``No Passive Haptics''), where the subjects would need to target the buttons in mid-air.
 The different conditions and the view of the virtual world is shown in Figure 3.
@@ -273,9 +274,9 @@ Subjects perceived that they performed faster and more accurately with the passi
 
 
 % produces the bibliography section when processed by BibTeX
-% \nocite{*}
-%\bibliography{bibtex_database}
-%\bibliographystyle{aiaa}
+%\nocite{*}
+\bibliography{MST2017}
+\bibliographystyle{aiaa}
 
 \end{document}
 
