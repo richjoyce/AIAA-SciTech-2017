@@ -64,8 +64,6 @@
   \fvset{fontsize=\footnotesize,xleftmargin=2em}
  \usepackage{lettrine}%  dropped capital letter at beginning of paragraph
  \usepackage[colorlinks]{hyperref}%  hyperlinks [must be loaded after dropping]
- \usepackage{setspace}
- \doublespacing
 
  \title{Passive Haptics to Enhance Virtual Reality Simulations}
 
@@ -92,10 +90,10 @@
 
 \begin{abstract}
 Recent advances in virtual reality technology have renewed interest in the use of head-mounted display based aerospace simulation.
-We present work on a virtual reality system that combines low fidelity physical prototypes, providing what is commonly called ``passive haptics'', with high fidelity visuals provided by a virtual reality head-mounted display.
+We present work on a virtual reality system that combines low fidelity physical prototypes, called ``passive haptics'', with high fidelity visuals provided by a virtual reality head-mounted display.
 Interaction with the prototype is achieved using an optical hand tracker.
 We evaluate the system with a Fitts' ISO9241-9 experiment on a virtual panel with 20 subjects.
-Fitts' throughput was significantly increased with the passive haptics, and training time was decreased.
+Fitts' throughput was significantly increased with the passive haptics compared to having no haptics, and training time was decreased.
 Subjective feedback from the subjects indicate they prefer the passive haptics for interacting with the virtual panel, and feel they are performing faster and more accurately.
 The use of this type of simulator has applications in prototyping cockpit designs, as well as for training in deployed situations where resources are minimal.
 \end{abstract}
@@ -106,7 +104,8 @@ A common problem is that the design (or modernization) of a cockpit will go into
 The remaining deficiencies of the cockpit design are expected to be overcome through additional crew training.
 These deficiencies represent a cost throughout the lifetime of the vehicle in training, and ``unknown'' deficiencies of the human-machine system are often discovered too late in accident reports.
 To address these issues, we have designed and prototyped a system to allow evaluations to occur earlier and more frequently in the design process.
-The aim of our system is to give a non-functioning geometric mockup the interactivity of a simulator.
+Typically, the design of a new cockpit will begin with a non-functioning geometric mockup before progressing to interactive, functioning simulators.
+The aim of our system is to give a non-functioning geometric mockup the functionality and interactivity of a simulator.
 The mockup, which is used in the early stage of the design process, can now be used for more extensive cockpit evaluations, with a quicker iteration time than a simulator requires.
 Our prototype, named the ``Rapidly Reconfigurable Research Cockpit'', consists of a virtual reality (VR) headset, optical hand tracking device, and 3D printed cockpit surfaces (Figure~\ref{fig:r3c})\cite{joyce_rapidly_2015}.
 
@@ -129,21 +128,21 @@ Our prototype, named the ``Rapidly Reconfigurable Research Cockpit'', consists o
 \end{figure}
 
 The VR head-mounted display (HMD) provides a virtual view of the cockpit environment.
-A challenging aspect of immersive VR simulations like this, however, is to provide appropriate tactile feel of the objects being interacted with (in this case, the instruments of a cockpit).
-We solve this by using 3D-printed instruments co-located with the virtual environment, which is a technique commonly called ``passive haptics''.
+A challenging aspect of immersive VR simulations is to provide appropriate tactile feel of the objects being interacted with (in this case, the instruments of a cockpit).
+We solve this by using 3D-printed instruments co-located with the virtual environment, a technique called ``passive haptics''.
 The instruments remain inert and non-functioning in the real world, but appear fully functional in the virtual world presented to the user.
-The user can interact with the virtual cockpit (i.e.\ pressing buttons) with the use of the optical based hand tracker, which measures the position of the users hands.
+The user can interact with the virtual cockpit (i.e.\ pressing buttons) with the use of the optical based hand tracker which measures the position of the users hands.
 This position is used to determine if the user is activating a button.
 Measurements from the hand tracker are used to display the essential visual feedback of hand position in the virtual world, as the use of an HMD blocks the view of ones own limbs.
 
-We evaluate our prototype using a Fitts' Law task to quantify the effect of having passive haptics to a traditional virtual reality HMD simulation, which would provide no haptic feedback.
+We evaluate our prototype using a Fitts' Law task to quantify the effect of passive haptics on a traditional virtual reality simulation, which would provide no haptic feedback.
 An experimental study with 20 subjects was performed and results are presented.
 In addition to Fitts' Law performance, we also measured subjects reported fatigue and presence.
 
 \section{Background}
 \subsection{Fitts' Law}
-One of the most well studied relationships for human-computer input is Fitts' Law\cite{fitts_information_1954}.
-Fitts' Law states that the movement time of human targeting motion is related to the size of the target (W) and the distance to the target (D).
+Fitts' Law is one of the most well studied relationships for human-computer input\cite{fitts_information_1954}.
+It relates the movement time of human targeting motion to both the size of the target (W) and the distance to the target (D).
 These two geometrical parameters are combined in the index of difficulty (ID), which is presented here in the popular Shannons' Formulation\cite{mackenzie_note_1989}:
 \begin{equation}
   ID=\log_2\left(\frac{D}{W}+1\right)
@@ -160,7 +159,7 @@ Throughput has the units of bits per second, analogous to the amount of informat
   TP=\frac{ID}{MT}
   \label{eq:tp}
 \end{equation}
-In studies of Fitts Law in which subjects are performing the task in two dimensions the ISO9421-9 circle multi-directional tapping task has become the standard\cite{international_organization_for_standardization_iso_2000}.
+The ISO9421-9 circle multi-directional tapping task has become the standard in studies of Fitts' Law with a two dimensional task\cite{international_organization_for_standardization_iso_2000}.
 A diagram of the circle task is shown in Figure~\ref{fig:circle}.
 An important consideration of Fitts' Law experiments is to utilize the adjustment for accuracy.
 This uses the recorded endpoint data to adjust for how the subjects actually performed the task.
@@ -181,9 +180,9 @@ Chun et al.\cite{chun_evaluating_2004} evaluated a set of 3D stereo displays wit
 Teather \& Stuerzlinger\cite{teather_pointing_2011} performed a fully 3D targeting task using a hand tracker.
 Liu et al.\cite{liu_comparing_2009} performed a planar multi-directional Fitts' task with a stereoscopic display, and compared virtual world to real world results, finding movement time twice as long in the virtual condition.
 Kohli et al.\cite{kohli_redirected_2012} evaluated passive haptics with warped virtual space to fool the user of the nature of the physical world.
-They had the subjects perform an ISO9241-9 Fitts' circle on a panel placed in front of them, and in some conditions the panel was rotated in the virtual world but not in the real world to create the discrepancy.
+They had the subjects perform an ISO9241-9 Fitts' circle on a panel placed in front of them, and in some conditions the panel was rotated in the virtual world but not in the real world to create a discrepancy.
 The subjects hand movement was warped to compensate for this.
-Seixas et al.\cite{seixas_one_2015} performed an ISO 9241-9 Fitts' circle task with the same LeapMotion hand tracker we use, but did not employ any haptic feedback.
+Seixas et al.\cite{seixas_one_2015} performed an ISO9241-9 Fitts' circle task with the same LeapMotion hand tracker we use, but did not employ any haptic feedback.
 Our study is a unique combination of using a head-mounted display, passive haptics and non-obtrusive hand tracker.
 
 \subsection{Passive Haptics}
@@ -191,14 +190,13 @@ A constant challenge of virtual environments has been presenting the user with a
 One focus of this work is the idea of passive haptics, whereby we recreate the tactile environment to provide the sense of touch and external forces.
 The disadvantage is that the tactile environment cannot dynamically change during the simulation.
 Fortunately, the adaptability (during simulation) of the passive haptic environment is not a requirement for the use case of aerospace cockpit simulation.
-We still retain the ability to quickly change the environment via 3D printing new parts in between simulation sessions.
+We retain the ability to quickly change the environment via 3D printing new parts between simulation sessions.
 
 Previous work of passive haptics has shown promising results for increased presence or task performance.
 Schiefele et al.\cite{schiefele_simple_1998} used a head-mounted display (HMD) to replace the visuals of a flight simulator (though technology has drastically changed in HMDs and hand tracking since their publication).
-They recreated only the positions of the panels with a flat plate and then used a magnetic hand tracker for reading the pilot input.
+They recreated only the positions of the panels with a flat plate and used a magnetic hand tracker for reading the pilot input.
 A short usability study was presented, and they found that users could activate switches, knobs and dials in less time with the physical panel than without (i.e.\ reaching into mid-air), a result reproduced here.
-Insko\cite{insko_passive_2001} investigated the impact of passive haptics on generic virtual environments.
-It was found that the passive haptics increased the sense of presence felt by users.
+Insko\cite{insko_passive_2001} investigated the impact of passive haptics on generic virtual environments, and found that the passive haptics increased the sense of presence felt by users.
 An experiment had two groups complete a maze in a virtual environment, one group with passive haptics on boundaries, and one without.
 After training the passive haptic group bumped into far fewer obstacles than the group without.
 Borst and Volz\cite{borst_evaluation_2005} created a ``mixed'' haptic virtual environment, whereby they combined an active haptic glove with a passive haptic panel.
@@ -206,7 +204,7 @@ They found the glove by itself consistently performed worse than the other two, 
 
 \section{Methods}
 \subsection{Technical Details}
-The head mounted display used is an Oculus Rift Development Kit 2.
+The head mounted display used here is an Oculus Rift Development Kit 2.
 The hand tracker, LeapMotion, is mounted above and pointed down so the field of view encompasses the area in front of the panel.
 A custom calibration program is run to line up the LeapMotion measurements with the virtual world in the rendering engine.
 For the experiment reported here, a blank panel (45cm x 45cm) was used to provide only the backstop of the virtual buttons for the ``Passive Haptics'' condition.
@@ -215,7 +213,7 @@ The button selection is registered by the subject moving their index finger into
 Their entrance into the hover zone is indicated to them by the button changing color.
 A successful button press is registered after staying in the hover zone for 160ms, and is indicated by the color turning off and a button click noise being played over speakers.
 
-The authors previous study asked subjects to complete a discrete button targeting task, and validated our technical approach\cite{joyce_rapidly_2015}.
+The authors' previous study asked subjects to complete a discrete button targeting task, and validated our technical approach\cite{joyce_rapidly_2015}.
 Subjects were able to select the buttons in the virtual world as accurately as in the real world, albeit with a small time penalty, consistent with other studies comparing real world to virtual world inputs\cite{liu_comparing_2009}.
 However, the difference between the passive haptic and no passive haptic condition was insignificant, leading to a more extensive Fitts' evaluation that is presented in this paper.
 The experimental setup for this study consisted of two conditions, one with the panel (``Passive Haptics (PH)'') and one without the panel (``No Passive Haptics (NH)''), where the subjects would need to target the buttons in mid-air.
@@ -254,7 +252,7 @@ The target width order was chosen randomly, but the order of the distances was s
 The 15 circle configurations were completed for each subject in both conditions, with passive haptics and with no passive haptics.
 The order of the conditions was counterbalanced so that half saw the passive haptic condition first.
 Subjects were not instructed on the second condition before they finished the first condition (i.e.\ subjects who started with no passive haptics were not told the second half would proceed with a passive haptic in place, and could not see the real panel in the experimental room).
-At the conclusion of each condition, they were given a presence questionnaire of 21 questions on a 7 point Likert scale, with questions from the Presence Questionnaire and Slater-Usoh-Steed questionnaire.
+At the conclusion of each condition, they were given a presence questionnaire of 21 questions on a 7 point Likert scale, with questions from the Presence Questionnaire and Slater-Usoh-Steed questionnaire\cite{witmer_measuring_1998,slater_depth_1994}.
 At the conclusion of the experiment, a condition comparison questionnaire was administered to directly compare subjects perceptions of the two conditions, with a 7 point Likert scale anchored from ``With Panel'' to ``Without Panel''.
 The subjects were asked after every other circle completion to provide an arm fatigue rating based on the Borg RPE (Rating of Perceived Exertion) scale (between 6-20).
 
@@ -263,12 +261,13 @@ Twenty (20) subjects performed the experiment, all engineering students (undergr
 Their ages ranged from 19-30, and included 10 female and 10 male subjects (balanced between the groups).
 All subjects had less than an hour experience with virtual reality devices, with half indicating no previous experience.
 Subjects used their dominant hand index finger to target the buttons (two subjects were left-handed).
+This experiment was approved by the Institutional Review Board at the University of California, Davis, and subjects signed a consent form and received no compensation.
 
 \subsection{Data Reduction}
 Typical Fitts' Law studies only use measurements after the subject is well trained in the task.
 This is usually quantified by the throughput (Equation~\ref{eq:tp}) increasing until it reaches an asymptote.
 Since we wanted to investigate the learning effects we did not require the subjects to reach this asymptotic behavior, expecting subjects to learn the system quickly (and observing so much during the data collection).
-Instead, we filtered the movements afterward to select only those which were direct to the target.
+Instead, we filtered the movements afterward to select only those which were direct to the target, consistent with a well-trained Fitts' Law subject.
 There were 18,000 movements recorded total (20 subjects, 2 conditions, 15 circle configurations with 30 movements each).
 This section briefly describes the methods to reduce the movements to only the ones in which the subject moved direct to the target.
 
@@ -277,7 +276,10 @@ We consider a single target-to-target movement for the Fitts' Law analysis if it
 Mathematically, the ballistic portion is determined by finding the maximum velocity and the corresponding minimums on either side.
 This can be seen in plots of the movements in Figure~\ref{fig:movements}.
 The movement was considered predominantly ballistic if time spent in the ballistic phase is more than 85\% of total time, and the ballistic phase path distance was at least 75\% of the distance between the targets.
+These thresholds were determined by visually inspecting a sampling of movements at these thresholds to confirm that they were not direct to target.
+It is important to note that the major conclusions of the Fitts' Law analysis do not change based on changes in these thresholds.
 We also removed movements which had a total path distance more than 125\% of the distance between the targets, or travelled more than 1.3in after entering and exiting the target (but not successfully activating it).
+This filtered out movements that had a false start to the next target before they activated the current target.
 This left 12,300 movements categorized as ``good movements'' for the Fitts analysis.
 
 \begin{figure}[p]
@@ -319,16 +321,16 @@ The throughput for both is similar to the range of throughput found in literatur
 
 Our passive haptics condition is a similar setup to one condition tested in Kohli et al.\cite{kohli_redirected_2012}.
 They used a marked fingertip tracker instead of our marker-less approach, but had subjects perform a Fitts circle on a physical panel while wearing an HMD.
-They found a throughput value of \~6bps for this condition, compared to our result of 4.7bps.
+They found a throughput value of $\sim$6bps for this condition, compared to our result of 4.7bps.
 It is possible that the performance of their hand tracker contributed to a higher throughput.
 Seixas et al.\cite{seixas_one_2015} performed a similar condition to our NH condition, using a LeapMotion to perform a Fitts circle, though visual feedback was given on a computer monitor.
-Their results found a throughput of \~2.9bps, much lower than our value of 4.1bps.
+Their results found a throughput of $\sim$2.9bps, much lower than our value of 4.1bps.
 This performance improvement in our experiment is likely due to the additional immersion of having a head-mounted display.
 
 \begin{figure}[htb]
   \centering
   \includegraphics{figures/fitts.png}
-  \caption{Fitts' Law regression. Points are mean of each circle configuration for each subject. Regression parameters shown in Table~\ref{tab:fitts}}
+  \caption{Fitts' Law regression. Points are mean of each circle configuration for each subject. Regression parameters shown in Table~\ref{tab:fitts}.}
   \label{fig:fitts}
 \end{figure}
 
@@ -354,7 +356,7 @@ The loss of presence score for subjects who lost the panel indicates that they f
 The answers to the final question of the condition comparison shown below refutes the former as most subjects strongly preferred the panel.
 
 The average arm fatigue score reported at the end of the first condition was significantly higher for those whose first condition was NH compared to those starting with PH.
-This result is also reported in Table~\cite{tab:subjective}.
+This result is also reported in Table~\ref{tab:subjective}.
 The underlying cause of this could be the aid of passive haptics in performing the task (as seen with the higher throughput), causing less time to be spent moving the arm, or it could also be a biomechanical cause.
 One biomechanical reason could be due to subjects being able to hit the panel with non-zero velocity to activate the button in the PH condition, yet they had to achieve zero velocity on their own without the panel in the NH condition.
 The final score after the second condition was not significantly different, which is possibly due to subjects plateauing at their maximal fatigue for the experiment
@@ -400,6 +402,7 @@ This is likely due to the passive haptics providing the correction for the Z-axi
   \centering
   \begin{tabular}{lccc}
     & \multicolumn{3}{c}{Corrective Time (msec)} \\
+    \cline{2-4}
     Distance (cm) & 20 & 30 & 40 \\
     Condition & & & \\
     \hline\hline
@@ -413,9 +416,18 @@ This is likely due to the passive haptics providing the correction for the Z-axi
 \section{Conclusion}
 
 We evaluated a hand-tracked, passive haptic interface for virtual reality head mounted displays using a Fitts ISO9241-9 multi-directional tapping task.
-We found increased Fitts' throughput when subjects had a physical panel (passive haptics) in position with the virtual buttons than without a physical panel.
-Subjects were able to train quicker in the virtual environment with the passive haptics than without.
-Subjects perceived that they performed faster and more accurately with the passive haptics, and overall preferred the passive haptic condition.
+We found Fitts' throughput increased from 4.1bps to 4.7bps when subjects had a physical panel (passive haptics) in position with the virtual buttons than without a physical panel.
+The regression parameters found similar slopes between the two conditions, with a higher intercept for the no haptics condition.
+Our data reduction found that subjects performed more direct movements in the passive haptics condition, which we interpret as subjects' difficulty in training to the task in the no haptics condition.
+This finding was also supported by the comparing time taken by the subjects in each condition (passive haptics took less time to complete on average), as well as investigating the amount of time spent in the corrective phase of the trajectory (more time was spent in the corrective phase for the no haptics condition).
+The subjective results from questionnaires found that subjects had decreased presence in the no haptics condition if the passive haptics were performed first.
+All subjects responded that they preferred the passive haptics condition, except for two who indicated no preference.
+We have found that the use of passive haptics for virtual reality simulations provides subjects with a higher sense of presence, reduces training time and increases their targeting performance.
+
+
+\section*{Acknowledgments}
+We would like to thank all the subjects that participated in this experiment.
+
 
 % produces the bibliography section when processed by BibTeX
 %\nocite{*}
