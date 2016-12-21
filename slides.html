@@ -7,12 +7,43 @@
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
       @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
       @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Montserrat);
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-      body { font-family: 'Droid Serif'; }
+      body {
+        font-family: 'Open Sans';
+        color: #1c4587;
+      }
       h1, h2, h3 {
-        font-family: 'Yanone Kaffeesatz';
+        font-family: 'Montserrat';
         font-weight: normal;
       }
+      .remark-slide-content {
+        font-size: 150%;
+      }
+      .bold {
+        font-weight: bold;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .left-column { float:left; margin-right: 2%; }
+      .right-column { float:right; }
+
+      .split-50 .left-column { width:49% }
+      .split-50 .right-column { width:49% }
+
+      .caps {
+        text-transform: uppercase;
+        font-size: 150%;
+      }
+
+      .big-font {
+        font-family: 'Montserrat';
+      }
+
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
     </style>
   </head>
@@ -42,11 +73,13 @@ background-size: 90%
 
 ---
 
-.left.bold[Low Fidelity]
-.left[Physical World]
+class: middle
 
-.right.bold[High Fidelity]
-.right[Virtual World]
+.left.caps.bold[Low Fidelity]
+.left[in the physical world]
+
+.right[overlay virtual world with]
+.right.caps.bold[High Fidelity]
 
 ---
 
@@ -55,23 +88,56 @@ background-size: 90%
 
 ---
 
+class: split-50
+
 # Experimental Setup
+
+.left-column[
+![](figures/passive_haptics.jpg)
+.center[*Passive Haptics Condition*]
+]
+
+.right-column[
+![](figures/no_passive_haptics.jpg)
+.center[*No Passive Haptics Condition*]
+]
+
 
 ---
 
-# Experimental Task
+class: center, middle
+
+![](figures/virtual_view.png)
+
+---
+
+class: center, middle
+
+![](figures/iso9241.svg)
 
 ---
 
 # Conditions
 
+- 20 Subjects
+- 2 Conditions
+- 3 distances (D)
+- 5 button sizes (W)
+- 10 buttons per circle
+
 ---
 
 # Dependent Variables
 
+- time
+- fatigue
+- presence
+
 ---
 
-# Fitts Results
+class: center, middle
+
+![](figures/fitts.png)
 
 ---
 
