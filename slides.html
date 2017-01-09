@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title>AIAA SciTech 2017</title>
@@ -29,6 +28,20 @@
         max-width: 100%;
       }
 
+      table {
+        width: 100%;
+        font-size: inherit;
+      }
+
+      td {
+        text-align: center;
+      }
+
+      li {
+        padding: .4em
+      }
+
+
       .left-column { float:left; margin-right: 2%; }
       .right-column { float:right; }
 
@@ -44,6 +57,20 @@
         font-family: 'Montserrat';
       }
 
+      .muted {
+        color: #3d85c6;
+      }
+
+      .image-75  img {
+        width: 75%
+      }
+
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+        font-size: 70%;
+      }
+
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
     </style>
   </head>
@@ -53,16 +80,22 @@
 class: center, middle
 
 ## Passive Haptics to Enhance Virtual Reality Simulations
+
+.muted[
+
 ### Richard Joyce, Stephen K. Robinson
 
 UC Davis Mechanical and Aerospace Engineering
 
+Human/Robotics/Vehicle Integration and Performance
+
+]
+
+???
 Human/Robotics/Vehicle Integration and Performance [[1]](http://hrvip.ucdavis.edu)
 
 .footnote[slides available at [rjoyce.me/AIAA-SciTech-2017](http://rjoyce.me/AIAA-SciTech-2017)]
 
-
-???
 
 Notes for the _first_ slide!
 
@@ -83,8 +116,15 @@ class: middle
 
 ---
 
-# Animation
+class: center, middle
 
+![](figures/r3c_clip.gif)
+
+---
+
+class: center, middle
+
+![](figures/r3c_callout_v2.png)
 
 ---
 
@@ -113,39 +153,134 @@ class: center, middle
 
 class: center, middle
 
+.image-75[
 ![](figures/iso9241.svg)
+]
 
 ---
 
-# Conditions
+# Experimental Conditions
 
-- 20 Subjects
-- 2 Conditions
-- 3 distances (D)
-- 5 button sizes (W)
-- 10 buttons per circle
+
+![](figures/experiment_conditions.svg)
+
+20 subjects (10 male, 10 female), ages 19-30  
+Conditions and circles presented in a counter-balanced order
+
 
 ---
 
 # Dependent Variables
 
-- time
-- fatigue
-- presence
+- **time** to perform each button press
+- **trajectory** of each button press movement
+- **arm fatigue** self-reported after every other button width
+- **presence** questionnaire after each condition
+- **condition comparison** survey after the experiment
 
 ---
 
-class: center, middle
+
+# Fitts' Law Results
 
 ![](figures/fitts.png)
 
 ---
 
-# Training Time
+# Fitts' Law Results
+
+| Condition | Throughput | Slope | Intercept |
+|----|
+| No Haptics | 4.1 bps | 294 msec/bit | -117 msec |
+| | | |
+| | | |
+| Passive Haptics | 4.7 bps | 269 msec/bit | -180 msec |
+
 
 ---
 
+# Presence
+
+![](figures/presence_bar.png)
+
+???
+
+Presence Questionnaire [1, 2] given after each condition
+
+.footnote[
+[1] Witmer & Singer, "Measuring Presence in Virtual Environments," *Presence*, 1998  
+[2] Slater, Usoh & Steed, "Depth of Presence in Virtual Environments," *Presence*, 1994
+]
+
+---
+
+# Arm Fatigue
+
+![](figures/fatigue_bar.png)
+
+
+???
+
+Subjects self-reported arm fatigue on scale of 6-20 (Borg RPE)  
+Scores reported here are at end of the condition
+
+---
+
+# Condition Time
+
+![](figures/time_bar.png)
+
+???
+
+Time taken to complete total condition  
+
+---
+
+
+![](figures/condition_comparison_vertical.png)
+
+???
+
+Likert scale questionnaire given at the end of the experiment
+
+---
+
+
 # Trajectory
+
+.left-column[
+![](figures/mvmt6467_top.png)
+]
+
+.right-column[
+![](figures/mvmt3831_top.png)
+]
+
+---
+
+# Corrective Time
+
+Time spent in the corrective phase per condition and circle distance
+
+| Distance | 20 cm | 30 cm | 40 cm |
+| -- |
+| No Haptics | 533 msec | 707 msec | 1253 msec |
+| Passive Haptics | 364 msec | 500 msec | 804 msec |
+
+---
+
+# Summary
+
+- Fitts' throughput **higher** with passive haptics
+- Subjects highly **preferred** passive haptics
+- Subjects learned **faster** with passive haptics
+- Presence was **lowered** when passive haptics removed
+
+---
+
+class: center, middle
+
+# Thanks! Questions?
 
 ---
 
