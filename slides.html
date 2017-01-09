@@ -46,6 +46,9 @@
         padding: .4em
       }
 
+      .extra-pad {
+        padding-top: 3em;
+      }
 
       .left-column { float:left; margin-right: 2%; }
       .right-column { float:right; }
@@ -68,6 +71,13 @@
 
       .image-75  img {
         width: 75%
+      }
+      .image-50  img {
+        width: 50%
+      }
+
+      .image-25  img {
+        width: 25%
       }
 
       .footnote {
@@ -223,6 +233,25 @@ Conditions and circles presented in a counter-balanced order
 
 ---
 
+# Fitts' Law
+
+.center.image-50[
+![](drawings/fitts_target.svg)
+]
+
+**Index of difficulty** (ID) is related to target **distance** (D) and **width** (W):
+.center.image-50[
+![](figures/id_eqn.png)
+]
+
+
+**Movement time** (MT) is linearly related to **index of difficulty**:
+.center.image-50[
+![](figures/fitts_eqn.png)
+]
+
+---
+
 # Fitts' Law Results
 
 ![](figures/fitts.png)
@@ -237,6 +266,15 @@ Conditions and circles presented in a counter-balanced order
 | | | |
 | | | |
 | Passive Haptics | 4.7 bps | 269 msec/bit | -180 msec |
+
+
+.extra-pad[
+**Throughput** is often used to compare conditions in Fitts' Law epxeriments
+]
+
+.center[
+.image-25[![](figures/throughput_eqn.png)]
+]
 
 
 ---
