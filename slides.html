@@ -9,6 +9,21 @@
       @import url(https://fonts.googleapis.com/css?family=Montserrat);
       @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+@page {
+  size: 908px 681px;
+  margin: 0;
+}
+
+@media print {
+  .remark-slide-scaler {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
+
       body {
         font-family: 'Open Sans';
         color: #1c4587;
@@ -20,6 +35,19 @@
       }
       .remark-slide-content h3 {
         font-size: 32px;
+      }
+
+      .no-bottom-margin h1,
+      .no-bottom-margin h2,
+      .no-bottom-margin h3,
+      .no-bottom-margin h4,
+      .no-bottom-margin h5,
+      .no-bottom-margin h6 { margin-bottom: 0 }
+
+      .remark-slide-content h6 {
+        margin-top: 0;
+        font-weight: normal;
+        color: #3d85c6;
       }
 
       .remark-slide-content {
@@ -34,12 +62,21 @@
       }
 
       table {
-        width: 100%;
-        font-size: inherit;
+        margin: auto;
+        font-size: 125%;
       }
 
       td {
         text-align: center;
+      }
+
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+
+      th {
+        border-bottom: 2px solid #1c4587
       }
 
       li {
@@ -88,7 +125,7 @@
 
       .r3c_reveal{
         position: absolute;
-        bottom: 4em;
+        bottom: 2em;
         left: 0;
         width: 100%;
         text-align: center;
@@ -178,11 +215,6 @@ class: middle
 .right[overlay virtual world with]
 .right.caps.bold[High Fidelity]
 
---
-
-.r3c_reveal[
-### Rapidly Reconfigurable Research Cockpit
-]
 
 ???
 
@@ -210,6 +242,11 @@ class: center, middle
 
 ![](figures/r3c_clip.gif)
 
+.r3c_reveal[
+### Rapidly Reconfigurable Research Cockpit
+]
+
+
 ---
 
 # Previous Work
@@ -219,7 +256,6 @@ Richard Joyce and Stephen K. Robinson, "The Rapidly Reconfigurable Research Cock
 - Our previous study validated technical approach
 - Accuracy of button presses using hand tracker in virtual world same as real world
 - Subjects performed in virtual world slightly slower than in real world
-- Virtual world with passive haptics compared similarly to without haptics
 
 ---
 
@@ -252,6 +288,13 @@ class: center, middle
 ![](figures/iso9241.svg)
 ]
 
+**D** = Circle Distance  
+**W** = Button Width
+
+???
+
+mention the D and W
+
 ---
 
 # Experimental Conditions
@@ -261,16 +304,17 @@ class: center, middle
 
 20 subjects (10 male, 10 female), ages 19-30  
 Conditions and circles presented in a counter-balanced order
+Experiment time ~one hour per subject
 
 ---
 
 # Dependent Variables
 
 - **time** to perform each button press
-- **trajectory** of each button press movement
 - **arm fatigue** self-reported after every other button width
 - **presence** questionnaire after each condition
 - **condition comparison** survey after the experiment
+- **trajectory** of each button press movement
 
 ---
 
@@ -280,11 +324,15 @@ Conditions and circles presented in a counter-balanced order
 ![](drawings/fitts_target.svg)
 ]
 
-**Index of difficulty** (ID) is related to target **distance** (D) and **width** (W):
+.center[
+**Index of difficulty** (ID) is related  
+to target **distance** (D) and **width** (W):
+]
 .center.image-50[
 ![](figures/id_eqn.png)
 ]
 
+???
 
 **Movement time** (MT) is linearly related to **index of difficulty**:
 .center.image-50[
@@ -293,40 +341,75 @@ Conditions and circles presented in a counter-balanced order
 
 ---
 
-# Fitts' Law Results
-
-![](figures/fitts.png)
-
----
-
-# Fitts' Law Results
-
-| Condition | Throughput | Slope | Intercept |
-|----|
-| No Haptics | 4.1 bps | 294 msec/bit | -117 msec |
-| | | |
-| | | |
-| Passive Haptics | 4.7 bps | 269 msec/bit | -180 msec |
-
+# Fitts' Law
 
 .extra-pad[
-**Throughput** is often used to compare conditions in Fitts' Law epxeriments
+
 ]
 
 .center[
+**Throughput** (TP) is often used to compare  
+conditions in Fitts' Law experiments.
+
+TP is defined as a ratio of **index of difficulty** (ID)  
+and **movement time** (MT):
+
 .image-25[![](figures/throughput_eqn.png)]
 ]
 
+---
+
+# Fitts' Law Results
+
+.extra-pad[
+
+]
+
+.center[
+| Condition | Throughput |
+|----|
+| No Haptics | **4.1 bps** |
+| | | |
+| | | |
+| Passive Haptics | **4.7 bps** |
+]
+
+.extra-pad[
+
+]
+
+Typical throughput of a mouse is 3.7&mdash;4.9 bps
 
 ---
 
-# Presence
+class: middle
 
-![](figures/presence_bar.png)
+.no-bottom-margin[
+### Group 1: No Haptics First
+]
+.no-margin[![](drawings/group_no_haptics.svg)]
+
+
+.add-padding[]
+
+.no-bottom-margin[
+### Group 2: Passive Haptics First
+]
+.no-margin[![](drawings/group_passive_haptics.svg)]
+
+---
+
+.no-bottom-margin[
+# Presence
+]
+###### Presence is a subjective measure of how immersed one is in the simulation
+
+![](figures/presence_line.png)
+
+Presence Score is sum of responses from questionnaire
 
 ???
 
-Presence Questionnaire [1, 2] given after each condition
 
 .footnote[
 [1] Witmer & Singer, "Measuring Presence in Virtual Environments," *Presence*, 1998  
@@ -335,27 +418,33 @@ Presence Questionnaire [1, 2] given after each condition
 
 ---
 
+.no-bottom-margin[
 # Arm Fatigue
+]
+###### Subjects self-reported arm fatigue on scale of 6-20 (Borg RPE)
 
-![](figures/fatigue_bar.png)
+![](figures/fatigue_line.png)
 
+Arm Fatigue is reported score at end of condition
 
 ???
 
-Subjects self-reported arm fatigue on scale of 6-20 (Borg RPE)  
-Scores reported here are at end of the condition
-
 ---
 
+.no-bottom-margin[
 # Time per Condition
+]
+###### Total time taken by subjects to complete each condition
 
-![](figures/time_bar.png)
+![](figures/time_line.png)
+
+
 
 ???
 
-Time taken to complete total condition  
-
 ---
+
+# Condition Comparison
 
 ![](figures/condition_comparison_vertical.png)
 
@@ -365,7 +454,45 @@ Likert scale questionnaire given at the end of the experiment
 
 ---
 
+class: split-50
+
 # Trajectory
+
+.left-column[
+![](figures/mvmt6467_XY.png)
+
+![](figures/mvmt6467_XZ.png)
+]
+
+.right-column[
+![](drawings/panel_axes.png)
+]
+
+???
+
+900 movements per subject
+
+18,000 movements
+
+
+---
+
+class: split-50
+
+# Trajectory
+
+.left-column[
+![](figures/mvmt6467_closeup_XY.png)
+![](figures/mvmt6467_closeup_XZ.png)
+]
+
+.right-column[
+![](drawings/panel_axes.png)
+]
+
+---
+
+# Trajectory Phases
 
 .left-column[
 ![](figures/mvmt6467_top.png)
@@ -373,18 +500,6 @@ Likert scale questionnaire given at the end of the experiment
 
 .right-column[
 ![](figures/mvmt3831_top.png)
-]
-
----
-
-# Trajectory
-
-.left-column[
-![](figures/mvmt3831_tracks.png)
-]
-
-.right-column[
-![](figures/mvmt3831_closeup.png)
 ]
 
 ---
@@ -410,6 +525,15 @@ Time spent in the corrective phase per condition and circle distance
 
 ---
 
+# Next Steps
+
+- Perform user interface evaluation with prototype
+- Data-driven investigation of trajectory analysis
+- Validation of trajectory analyses in more cognitive task
+
+---
+
+count: false
 class: center, middle
 
 # Thanks!
@@ -417,11 +541,26 @@ class: center, middle
 
 ---
 
+count: false
+
+# Backup
+
+---
+
+count: false
+
+# Fitts' Law Results
+
+![](figures/fitts.png)
+
+
     </textarea>
-    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    <script src="remark.js">
     </script>
     <script type="text/javascript">
-      var slideshow = remark.create();
+      var slideshow = remark.create({
+          slideNumberFormat: 'AIAA SciTech 2017 | %current%/%total%'
+          });
     </script>
   </body>
 </html>
